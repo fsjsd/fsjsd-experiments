@@ -1,12 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from "react";
+import AdaptiveListContainer from "./adaptive-list/AdaptiveListContainer";
 
-import VLFIndex from './virtuallayoutfixed/index';
+const style = {
+  width: "100%",
+  height: "100%"
+};
 
 function App() {
   return (
-    <div className="App">
-      <VLFIndex/>
+    <div style={style}>
+      <AdaptiveListContainer />
     </div>
   );
 }
