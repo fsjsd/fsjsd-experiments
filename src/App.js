@@ -7,16 +7,36 @@ const style = {
   height: "100%"
 };
 
+let demoObj = {
+  a: "objects",
+  b: "work",
+  c: "too",
+  succes: true,
+  someNumber: 123
+};
+
 let lgr = lgrBrowser();
 
-lgr.log(process);
+lgr.log("hello");
+lgr.debug("world");
+lgr.error("uh oh");
+lgr.log(demoObj);
+lgr({ smile: true }).debug("pass log config!");
 
-lgr.debug("hello");
-lgr({ smile: true }).debug("hello");
-lgr({ meta: "somelogger" }).debug("hello");
-lgr({ meta: ["somelogger", "info"], backgroundColor: "#FF0000" }).debug(
-  "hello"
-);
+let myLogger = lgr({ meta: "somelogger" });
+myLogger.debug("magic");
+myLogger.debug("log");
+myLogger.debug("formatting!");
+myLogger.debug(demoObj);
+
+let colorLogger = lgr({
+  meta: ["somelogger", "info"],
+  backgroundColor: "#FF0000"
+});
+colorLogger.debug("color");
+colorLogger.debug("me");
+colorLogger.debug("happy");
+colorLogger.debug(demoObj);
 
 function App() {
   return (
