@@ -32,6 +32,10 @@ const transformArgs = config => (...args) => {
     return [":)", ...args];
   }
 
+  if (config.timestamp) {
+    return [new Date().toTimeString(), ...args];
+  }
+
   // untouched
   return args;
 };

@@ -4,8 +4,11 @@ const makeStyle = (
 ) => {
   const fontsize = `$1.${5 * i}rem`;
   if (i > 0) {
+    // dynamically change color
   }
-  return `background-color:${backgroundColor};color:${color};border-radius:3px;padding:2px 4px;margin-left:2px;font-size:${fontsize}`;
+  return `background-color:${backgroundColor};color:${color};border-radius:3px;padding:2px 4px;margin-left:2px;font-size:${fontsize};font-weight:${
+    i === 0 ? "bold" : "normal"
+  }`;
 };
 
 const transformConsoleArgs = config => (...args) => {

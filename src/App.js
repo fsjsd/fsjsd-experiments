@@ -1,6 +1,7 @@
 import React from "react";
 import AdaptiveListContainer from "./adaptive-list/AdaptiveListContainer";
-import { lgrBrowser } from "./lgr/lgr";
+import { lgrBrowser, registerWriterMiddleware } from "./lgr/lgr";
+import htmlDomWriter from "./lgr/htmlDomWriter";
 
 const style = {
   width: "100%",
@@ -11,11 +12,13 @@ let demoObj = {
   a: "objects",
   b: "work",
   c: "too",
-  succes: true,
+  success: true,
   someNumber: 123
 };
 
 let lgr = lgrBrowser();
+
+registerWriterMiddleware(htmlDomWriter);
 
 lgr.log("hello");
 lgr.debug("world");
@@ -30,13 +33,15 @@ myLogger.debug("formatting!");
 myLogger.debug(demoObj);
 
 let colorLogger = lgr({
-  meta: ["somelogger", "info"],
+  meta: ["colors!", "red ..."],
   backgroundColor: "#FF0000"
 });
 colorLogger.debug("color");
 colorLogger.debug("me");
 colorLogger.debug("happy");
 colorLogger.debug(demoObj);
+
+lgr({ meta: ["features"], timestamp: true }).debug("timestamp");
 
 function App() {
   return (
