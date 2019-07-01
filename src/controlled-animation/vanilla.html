@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .loadingAnim {
+        background-color: #eee;
+        padding: 20px;
+        width: 150px;
+        opacity: 0;
+      }
+      .loadingAnimFadeIn {
+        animation: fadeIn 1.5s 1;
+        animation-fill-mode: forwards;
+      }
+      .loadingAnimFadeOut {
+        animation: fadeOut 1.5s 1;
+        animation-fill-mode: forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myBtn">Get Stuff</button>
+    <div id="loadingAnimation" class="loadingAnim">loading</div>
+  </body>
+  <script>
+    let loading = true;
+    myBtn.addEventListener("click", function() {
+      loadingAnimation.setAttribute(
+        "class",
+        loading
+          ? "loadingAnim loadingAnimFadeIn"
+          : "loadingAnim loadingAnimFadeOut"
+      );
+      loading = !loading;
+    });
+  </script>
+</html>
