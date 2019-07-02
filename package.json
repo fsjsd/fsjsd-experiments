@@ -1,11 +1,15 @@
 {
   "name": "fsjsd-experiments",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "fsjsd-demosite": "1.0.0",
+    "fsjsd-demosite": "1.0.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-icons": "^3.7.0",
+    "react-router-dom": "^5.0.1",
+    "react-router-prop-types": "^1.0.4",
+    "react-router-utilitybelt": "0.0.8",
     "react-scripts": "3.0.1",
     "styled-components": "^4.3.2",
     "use-debounce": "^2.0.2"

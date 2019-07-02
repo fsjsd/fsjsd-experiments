@@ -1,93 +1,71 @@
 import React, { useState, useEffect } from "react";
-import AdaptiveListContainer from "./adaptive-list/AdaptiveListContainer";
+
+// My simple demo site HTML scaffolding - adds zero logic just presentation
 import DemoSiteLayoutContainer from "fsjsd-demosite";
-import { ControlledTransitionAnimation } from "./controlled-animation/ControlledAnimation";
-import styled from "styled-components";
 
-/*
-const fadeInOutKeyframes = keyframes`
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-`;
+// React Router
+import { BrowserRouter } from "react-router-dom";
 
-const fadeInOut = styled.div`
-  animation: ${fadeInOutKeyframes} 1.5s ease-in-out;
-`;
-*/
+// Import from react-router-utilitybelt
+import {
+  AppRoutesProvider,
+  RouteCatalog,
+  PageTitle
+} from "react-router-utilitybelt";
 
-const style = {
-  slideAnimation: {
-    transitionDuration: "3.5s",
-    transform: "translate(10px, 10px)"
-  },
-  slideAnimationRunning: {
-    transform: "translate(300px, 10px)"
-  },
-  fadeAnimation: {
-    transitionDuration: "0.5s",
-    transitionDelay: "0.5s",
-    opacity: "0"
-  },
-  fadeAnimationRunning: {
-    opacity: "1"
-  },
-  loadingAnim: {
-    backgroundColor: "#eee"
+// implement these in your own project to customise
+import { appRoutes, navItemGroups } from "./AppRoutes";
+import NavFilter from "./components/NavFilter";
+import BreadCrumbsContainer from "./components/BreadCrumbsContainer";
+import DrawerNavigationContainer from "./components/DrawerNavigationContainer";
+
+const styles = {
+  contentPane: {
+    padding: "15px"
   }
 };
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isLoadingAnimComplete, setIsLoadingAnimComplete] = useState(false);
-
-  //console.log("start", { isLoading });
-
-  const someApi = useEffect(() => {
-    setIsLoading(prev => true);
-    //console.log("sideEffect", { isLoading });
-    window.setTimeout(() => {
-      //console.log("timeoutComplete", { isLoading });
-      //if (isLoading) {
-      setIsLoading(prev => false);
-      //}
-    }, 5000);
-  }, []);
-
-  const loadingAnimFinalized = () => {
-    console.log("loadingAnimFinalized");
-    setIsLoadingAnimComplete(true);
-  };
+  const [navFilter, setNavFilter] = useState("");
 
   return (
-    <DemoSiteLayoutContainer
-      renderHeader={() => <>Adaptive List Demonstration</>}
-      renderNavigation={() => <>x</>}
-      renderContents={() => (
-        <>
-          <div>
-            {isLoading && <span>loading ...</span>}
-            {!isLoading && <span>side effect complete</span>}
-            {!isLoading && isLoadingAnimComplete && (
-              <span> ... side effect &amp; animation complete</span>
-            )}
-          </div>
-          {!isLoadingAnimComplete && (
-            <ControlledTransitionAnimation
-              style={{
-                ...style.fadeAnimation,
-                ...(isLoading ? style.fadeAnimationRunning : {})
-              }}
-              triggerWhen={{ transform: "translate(10px, 10px)", opacity: "0" }}
-              onAnimated={loadingAnimFinalized}
-            >
-              <div style={style.loadingAnim}>...</div>
-            </ControlledTransitionAnimation>
+    <BrowserRouter>
+      <AppRoutesProvider
+        appRoutesData={appRoutes}
+        navItemGroups={navItemGroups}
+      >
+        <DemoSiteLayoutContainer
+          renderHeader={() => (
+            <>
+              <b>
+                <PageTitle />
+              </b>{" "}
+              - FSJSD Demos
+            </>
           )}
-          {!isLoading && isLoadingAnimComplete && <div>Loaded Content!</div>}
-          <AdaptiveListContainer />
-        </>
-      )}
-    />
+          renderNavigation={() => (
+            <div>
+              {/* Filter control for nav */}
+              <NavFilter
+                onChange={filterText => setNavFilter(filterText)}
+                value={navFilter}
+              />
+              {/* Navigation Links */}
+              <DrawerNavigationContainer filter={navFilter} />
+            </div>
+          )}
+          renderContents={() => (
+            <>
+              <BreadCrumbsContainer />
+              <div className="Route" style={styles.contentPane}>
+                {/* Route component renders ... no repeated route paths! */}
+                <RouteCatalog onRouteNotFound={() => <>Page Not Found</>} />
+              </div>
+            </>
+          )}
+        />
+      </AppRoutesProvider>
+    </BrowserRouter>
   );
 }
 
