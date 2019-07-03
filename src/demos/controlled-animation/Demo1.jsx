@@ -46,16 +46,6 @@ export const Demo1 = () => {
       </StateIndicators>
       {!isLoadingAnimComplete && (
         <>
-          {/*<ControlledFade
-            triggerWhen={{ opacity: "0" }}
-            onAnimated={loadingAnimFinalized}
-          >
-            <LoadingAnim
-              duration="1s"
-              triggerWhen={{ opacity: "0" }}
-              onAnimated={loadingAnimFinalized}
-            />
-          </ControlledFade>*/}
           <ControlledTransitionAnimation
             style={{
               ...AnimationStyles.fadeAnimation,
@@ -73,4 +63,17 @@ export const Demo1 = () => {
       )}
     </>
   );
+
+  /*
+  <ControlledFade
+      triggerWhen={{ opacity: "0" }}
+      onAnimated={loadingAnimFinalized}
+    >
+      <LoadingAnim
+        duration="1s"
+        triggerWhen={{ opacity: "0" }}
+        onAnimated={loadingAnimFinalized}
+      />
+    </ControlledFade>
+    */
 };
