@@ -17,14 +17,21 @@ import { Index as CAIndex } from "./demos/controlled-animation/index";
 import { Problem as CAProblem } from "./demos/controlled-animation/Problem";
 import { Demo1 as CADemo1 } from "./demos/controlled-animation/Demo1";
 import { Demo2 as CADemo2 } from "./demos/controlled-animation/Demo2";
+import { Index as ALIndex } from "./demos/adaptivelist/index";
+import {
+  AdaptiveListDemoLargeRowCount,
+  AdaptiveListDemoProgressiveLoadIndicator,
+  AdaptiveListDemoProgressiveLoadTombstones
+} from "./demos/adaptivelist/AdaptiveListDemos";
 
 // Route Definitions Groups
 // ========================
 // simple grouping strategy to assist with navigation groups.
 const defaultGroup = "";
 const animGroup = "Animation";
+const compsGroup = "Components";
 
-const navItemGroups = [defaultGroup, animGroup];
+const navItemGroups = [defaultGroup, animGroup, compsGroup];
 
 // Simple factory func to set defaults for all route definitions.
 // Note in AppRoutes below where some routes override these defaults.
@@ -93,15 +100,44 @@ const appRoutes = {
     exact: true,
     group: animGroup,
     showSubNav: false
+  }),
+
+  "/adaptivelist": makeRouteDefinition({
+    title: "Adaptive List",
+    icon: MdSettings,
+    component: ALIndex,
+    exact: true,
+    group: compsGroup,
+    showSubNav: true
+  }),
+  //
+  "/adaptivelist/pl-indicator": makeRouteDefinition({
+    title: "Progressive Load - Indicator",
+    parent: "/adaptivelist",
+    icon: MdSettings,
+    component: AdaptiveListDemoProgressiveLoadIndicator,
+    exact: true,
+    group: compsGroup,
+    showSubNav: false
+  }),
+  "/adaptivelist/pl-tombstones": makeRouteDefinition({
+    title: "Progressive Load - Tombstones",
+    parent: "/adaptivelist",
+    icon: MdSettings,
+    component: AdaptiveListDemoProgressiveLoadTombstones,
+    exact: true,
+    group: compsGroup,
+    showSubNav: false
+  }),
+  "/adaptivelist/largedataset": makeRouteDefinition({
+    title: "Large data set",
+    parent: "/adaptivelist",
+    icon: MdSettings,
+    component: AdaptiveListDemoLargeRowCount,
+    exact: true,
+    group: compsGroup,
+    showSubNav: false
   })
-  // "/breadcrumbs/1": makeRouteDefinition({
-  //   title: "Level 1",
-  //   icon: MdSettings,
-  //   component: Home,
-  //   parent: "/breadcrumbs",
-  //   exact: true,
-  //   group: demosGroup
-  // }),
 };
 
 export { makeRouteDefinition, navItemGroups, appRoutes };

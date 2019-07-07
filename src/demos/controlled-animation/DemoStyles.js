@@ -12,7 +12,7 @@ export const AnimationStyles = {
   fadeAnimation: {
     display: "inline-block",
     transitionDuration: "0.5s",
-    transitionDelay: "0.5s",
+    transitionDelay: "0s",
     opacity: "0"
   },
   fadeAnimationRunning: {

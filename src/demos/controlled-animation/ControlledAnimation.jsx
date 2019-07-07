@@ -35,7 +35,7 @@ function ControlledAnimation({
 
     // Standard syntax
     domControlRef.current.addEventListener(
-      "transitionend",
+      animationEventType,
       domAnimationEndHandler
     );
   }, []);

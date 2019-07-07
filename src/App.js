@@ -21,7 +21,9 @@ import DrawerNavigationContainer from "./components/DrawerNavigationContainer";
 
 const styles = {
   contentPane: {
-    padding: "15px"
+    //padding: "15px",
+    height: "100%",
+    flexGrow: "2"
   }
 };
 
@@ -57,7 +59,7 @@ function App() {
           renderContents={() => (
             <>
               <BreadCrumbsContainer />
-              <div className="Route" style={styles.contentPane}>
+              <div style={styles.contentPane}>
                 {/* Route component renders ... no repeated route paths! */}
                 <RouteCatalog onRouteNotFound={() => <>Page Not Found</>} />
               </div>

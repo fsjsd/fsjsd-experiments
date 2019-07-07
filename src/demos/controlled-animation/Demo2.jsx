@@ -18,7 +18,7 @@ export const Demo2 = () => {
       const timeoutRef = setIsLoading(prev => false); // finished, reset state
 
       return () => window.clearTimeout(timeoutRef);
-    }, 4000);
+    }, 1500);
   }, []);
 
   // call back for controlled animation

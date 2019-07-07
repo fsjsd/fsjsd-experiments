@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "fsjsd-demosite": "1.0.4",
+    "fsjsd-demosite": "1.0.5",
     "react": "^16.8.6",
+    "react-adaptive-list": "^1.0.15-a",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.1",

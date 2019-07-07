@@ -21,7 +21,7 @@ export const Demo1 = () => {
     // This would be your AJAX call
     const timeoutRef = window.setTimeout(() => {
       setIsLoading(prev => false); // finished, reset state
-    }, 4000);
+    }, 2000);
 
     return () => window.clearTimeout(timeoutRef);
   }, []);

@@ -49,14 +49,16 @@ export const Problem = () => {
           ...(authenticating ? AnimationStyles.fadeAnimationRunning : {})
         }}
       >
-        <LoadingAnim
-          duration="1.5s"
-          style={{
-            borderRadius: "40px",
-            width: "20px",
-            height: "20px"
-          }}
-        />
+        {authenticating && (
+          <LoadingAnim
+            duration="1.5s"
+            style={{
+              borderRadius: "40px",
+              width: "20px",
+              height: "20px"
+            }}
+          />
+        )}
       </div>
     </>
   );
