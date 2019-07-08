@@ -23,13 +23,14 @@ import {
   AdaptiveListDemoProgressiveLoadIndicator,
   AdaptiveListDemoProgressiveLoadTombstones
 } from "./demos/adaptivelist/AdaptiveListDemos";
+import { Index as FuncVClass } from "./demos/react-func-vs-class/index";
 
 // Route Definitions Groups
 // ========================
 // simple grouping strategy to assist with navigation groups.
 const defaultGroup = "";
 const animGroup = "Animation";
-const compsGroup = "Components";
+const compsGroup = "React Components";
 
 const navItemGroups = [defaultGroup, animGroup, compsGroup];
 
@@ -102,6 +103,15 @@ const appRoutes = {
     showSubNav: false
   }),
 
+  "/react-func-vs-class": makeRouteDefinition({
+    title: "Function v Class Comps",
+    icon: MdSettings,
+    component: FuncVClass,
+    exact: true,
+    group: compsGroup,
+    showSubNav: false
+  }),
+
   "/adaptivelist": makeRouteDefinition({
     title: "Adaptive List",
     icon: MdSettings,
@@ -110,6 +120,7 @@ const appRoutes = {
     group: compsGroup,
     showSubNav: true
   }),
+
   //
   "/adaptivelist/pl-indicator": makeRouteDefinition({
     title: "Progressive Load - Indicator",

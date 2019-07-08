@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AdaptiveList from "react-adaptive-list";
 import Tombstone from "./Tombstone";
 import styled from "styled-components";

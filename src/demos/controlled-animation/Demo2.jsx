@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ControlledTransitionAnimation } from "./ControlledAnimation";
+import { DemoSiteContent } from "../../components/DemoSiteContent";
 
 import { AnimationStyles, LoadingAnim, StateIndicators } from "./DemoStyles";
 
@@ -9,7 +10,7 @@ export const Demo2 = () => {
   // state for animation completion
   const [isLoadingAnimComplete, setIsLoadingAnimComplete] = useState(false);
 
-  const longRunningApi = useEffect(() => {
+  useEffect(() => {
     // set loading before starting API call ...
     setIsLoading(prev => true);
 
@@ -28,7 +29,7 @@ export const Demo2 = () => {
   };
 
   return (
-    <>
+    <DemoSiteContent>
       <h1>Controlled Transition Animation</h1>
       <StateIndicators>
         {isLoading && <div>loading ...</div>}
@@ -52,6 +53,6 @@ export const Demo2 = () => {
       {!isLoading && isLoadingAnimComplete && (
         <div>Show loaded content from side effect</div>
       )}
-    </>
+    </DemoSiteContent>
   );
 };

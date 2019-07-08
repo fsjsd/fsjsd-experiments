@@ -18,7 +18,7 @@ function ControlledAnimation({
       //console.log("domAnimationEndHandler", triggerStyles, ev, ev.target.style);
 
       const triggerPropCandidate = triggerStyles.find(
-        style => style == ev.propertyName
+        style => style === ev.propertyName
       );
 
       if (
@@ -38,7 +38,8 @@ function ControlledAnimation({
       animationEventType,
       domAnimationEndHandler
     );
-  }, []);
+  }, [animationEventType, onAnimated, triggerWhen]);
+
   return (
     <div ref={domControlRef} style={style}>
       {children}

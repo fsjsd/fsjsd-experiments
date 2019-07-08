@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // My simple demo site HTML scaffolding - adds zero logic just presentation
 import DemoSiteLayoutContainer from "fsjsd-demosite";
@@ -22,7 +22,6 @@ import DrawerNavigationContainer from "./components/DrawerNavigationContainer";
 const styles = {
   contentPane: {
     //padding: "15px",
-    height: "100%",
     flexGrow: "2"
   }
 };

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { ControlledTransitionAnimation } from "./ControlledAnimation";
+import { DemoSiteContent } from "../../components/DemoSiteContent";
 
 import {
   AnimationStyles,
   LoadingAnim,
-  FadeAnimation,
   StateIndicators
+  //FadeAnimation,
 } from "./DemoStyles";
 
 export const Demo1 = () => {
@@ -14,7 +15,7 @@ export const Demo1 = () => {
   // state for animation completion
   const [isLoadingAnimComplete, setIsLoadingAnimComplete] = useState(false);
 
-  const longRunningApi = useEffect(() => {
+  useEffect(() => {
     // set loading before starting API call ...
     setIsLoading(prev => true);
 
@@ -32,10 +33,12 @@ export const Demo1 = () => {
     setIsLoadingAnimComplete(true);
   };
 
-  const ControlledFade = FadeAnimation(ControlledTransitionAnimation);
+  // TODO: Figure out how to hook into transitionend event when
+  // hosted in styled component
+  // const ControlledFade = FadeAnimation(ControlledTransitionAnimation);
 
   return (
-    <>
+    <DemoSiteContent>
       <h1>Controlled Transition Animation</h1>
       <StateIndicators>
         {isLoading && <div>loading ...</div>}
@@ -61,7 +64,7 @@ export const Demo1 = () => {
       {!isLoading && isLoadingAnimComplete && (
         <div>Show loaded content from side effect</div>
       )}
-    </>
+    </DemoSiteContent>
   );
 
   /*

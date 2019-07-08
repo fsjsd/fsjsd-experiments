@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { ControlledTransitionAnimation } from "./ControlledAnimation";
 import { AnimationStyles, LoadingAnim } from "./DemoStyles";
-import styled from "styled-components";
+import { DemoSiteContent } from "../../components/DemoSiteContent";
 
 export const Problem = () => {
   const [loginFormVisible, setLoginFormVisible] = useState(true);
@@ -18,7 +17,7 @@ export const Problem = () => {
   };
 
   return (
-    <>
+    <DemoSiteContent>
       <h1>The Problem ...</h1>
 
       {loginFormVisible && (
@@ -60,6 +59,6 @@ export const Problem = () => {
           />
         )}
       </div>
-    </>
+    </DemoSiteContent>
   );
 };

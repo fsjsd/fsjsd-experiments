@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { DemoSiteContent } from "../../components/DemoSiteContent";
+
 export const Index = () => {
   return (
-    <>
+    <DemoSiteContent>
       <h1>Controlled Animations</h1>
       <ul>
         <li>
@@ -15,6 +17,6 @@ export const Index = () => {
           <Link to="/controlledanimation/demo2">Demo 2</Link>
         </li>
       </ul>
-    </>
+    </DemoSiteContent>
   );
 };
