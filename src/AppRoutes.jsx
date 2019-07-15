@@ -24,6 +24,7 @@ import {
   AdaptiveListDemoProgressiveLoadTombstones
 } from "./demos/adaptivelist/AdaptiveListDemos";
 import { Index as FuncVClass } from "./demos/react-func-vs-class/index";
+import { Index as ReactSymphony } from "./demos/react-symphony/index";
 
 // Route Definitions Groups
 // ========================
@@ -147,6 +148,14 @@ const appRoutes = {
     component: AdaptiveListDemoLargeRowCount,
     exact: true,
     group: compsGroup,
+    showSubNav: false
+  }),
+  "/react-symphony": makeRouteDefinition({
+    title: "Symphony",
+    icon: MdSettings,
+    component: ReactSymphony,
+    exact: true,
+    group: animGroup,
     showSubNav: false
   })
 };
