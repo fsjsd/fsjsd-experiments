@@ -4,16 +4,16 @@
   "private": true,
   "dependencies": {
     "fsjsd-demosite": "1.0.5",
-    "react": "^16.8.6",
-    "react-adaptive-list": "^1.0.15-a",
-    "react-dom": "^16.8.6",
-    "react-icons": "^3.7.0",
-    "react-router-dom": "^5.0.1",
-    "react-router-prop-types": "^1.0.4",
+    "react": "16.8.6",
+    "react-adaptive-list": "1.0.17",
+    "react-dom": "16.8.6",
+    "react-icons": "3.11.0",
+    "react-router-dom": "5.2.0",
+    "react-router-prop-types": "1.0.5",
     "react-router-utilitybelt": "0.0.8",
     "react-scripts": "3.0.1",
-    "styled-components": "^4.3.2",
-    "use-debounce": "^2.0.2"
+    "styled-components": "4.4.1",
+    "use-debounce": "2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,6 +37,6 @@
     ]
   },
   "devDependencies": {
-    "flow-bin": "^0.99.1"
+    "flow-bin": "0.99.1"
   }
 }
