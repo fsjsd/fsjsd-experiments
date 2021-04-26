@@ -11,7 +11,7 @@
     "react-router-dom": "^5.0.1",
     "react-router-prop-types": "^1.0.4",
     "react-router-utilitybelt": "0.0.8",
-    "react-scripts": "3.0.1",
+    "react-scripts": "4.0.3",
     "styled-components": "^4.3.2",
     "use-debounce": "^2.0.2"
   },
