@@ -13,7 +13,7 @@
     "react-router-utilitybelt": "0.0.8",
     "react-scripts": "3.0.1",
     "styled-components": "^4.3.2",
-    "use-debounce": "^2.0.2"
+    "use-debounce": "2.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
