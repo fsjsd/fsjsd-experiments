@@ -7,7 +7,7 @@
     "react": "^16.8.6",
     "react-adaptive-list": "^1.0.15-a",
     "react-dom": "^16.8.6",
-    "react-icons": "^3.7.0",
+    "react-icons": "4.2.0",
     "react-router-dom": "^5.0.1",
     "react-router-prop-types": "^1.0.4",
     "react-router-utilitybelt": "0.0.8",
