@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "fsjsd-demosite": "1.0.5",
-    "react": "^16.8.6",
+    "react": "16.14.0",
     "react-adaptive-list": "^1.0.15-a",
-    "react-dom": "^16.8.6",
+    "react-dom": "16.14.0",
     "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.1",
     "react-router-prop-types": "^1.0.4",
